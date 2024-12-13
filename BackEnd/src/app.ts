@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 const corsOptions: cors.CorsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "http://localhost:5071"],
   credentials: true,
 };
 app.use(cors(corsOptions));

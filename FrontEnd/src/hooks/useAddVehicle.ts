@@ -1,5 +1,6 @@
 import { addVehicle as addVehiclesApi } from "@/services/apiVehicles";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 function useAddVehicle() {
   const queryClient = useQueryClient();
@@ -8,9 +9,10 @@ function useAddVehicle() {
     mutationKey: ["vehicles"],
     onSuccess: () => {
       queryClient.invalidateQueries(["vehicles"]);
+      toast.success("Vehicle added successfully!");
     },
     onError: (error) => {
-      console.log("success");
+      toast.error(error.message);
     },
   });
 

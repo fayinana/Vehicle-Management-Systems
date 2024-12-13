@@ -15,7 +15,12 @@ const EditVehicleModal: React.FC<ModalProps> = ({
   onClose,
   vehicle,
 }) => {
-  const { register, handleSubmit, setValue } = useForm<{ status: string }>({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<{ status: string }>({
     defaultValues: { status: vehicle?.status || "Active" },
   });
   const { isEditing, editVehicle } = useEditVehicle();
@@ -60,10 +65,16 @@ const EditVehicleModal: React.FC<ModalProps> = ({
                   <option value="Maintenance">Maintenance</option>
                   <option value="Inactive">Inactive</option>
                 </select>
+                {errors.status && (
+                  <p className="text-red-600 text-sm">
+                    {errors.status.message}
+                  </p>
+                )}
               </div>
               <div className="mt-4 flex justify-end">
                 <button
                   type="button"
+                  test-data-id="cancel"
                   onClick={onClose}
                   className="mr-2 px-4 py-2 bg-gray-300 rounded-md"
                 >
@@ -72,8 +83,9 @@ const EditVehicleModal: React.FC<ModalProps> = ({
                 <button
                   type="submit"
                   className="px-4 py-2 bg-indigo-600 text-white rounded-md"
+                  disabled={isEditing}
                 >
-                  Save
+                  {!isEditing ? "Save" : "Saving..."}
                 </button>
               </div>
             </form>

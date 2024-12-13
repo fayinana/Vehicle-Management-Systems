@@ -5,8 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "module": "ESNext", // or "ES6"
-    "target": "ESNext", // or "ES6"
+    "types": ["cypress"],
+    "module": "ESNext",
+    "target": "ESNext",
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "baseUrl": ".",
@@ -19,5 +20,6 @@
     "allowJs": true,
     "noUnusedLocals": false,
     "strictNullChecks": false
-  }
+  },
+  "include": ["cypress/support/index.d.ts"]
 }

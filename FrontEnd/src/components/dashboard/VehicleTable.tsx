@@ -48,7 +48,7 @@ const VehicleTable = ({
               </TableCell>
             </TableRow>
           ) : (
-            vehicles?.map((vehicle) => (
+            vehicles?.map((vehicle, index) => (
               <TableRow key={vehicle._id}>
                 <TableCell className="font-medium">{vehicle.name}</TableCell>
                 <TableCell>
@@ -66,13 +66,18 @@ const VehicleTable = ({
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="h-8 w-8 p-0">
+                      <Button
+                        variant="ghost"
+                        className="h-8 w-8 p-0"
+                        data-testid={`action-button-${index}`}
+                      >
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem
                         onClick={() => onAction("edit", vehicle._id)}
+                        data-testid={`edit-${index}`}
                       >
                         Edit
                       </DropdownMenuItem>

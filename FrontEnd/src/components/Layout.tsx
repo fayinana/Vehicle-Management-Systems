@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <Car className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-semibold">
+              <span data-test-id="title" className="ml-2 text-xl font-semibold">
                 Vehicle Manager
               </span>
             </div>

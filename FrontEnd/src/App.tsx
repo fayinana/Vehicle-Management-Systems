@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Suspense, lazy } from "react";
 import Spinner from "./components/Spinner";
+import AppToaster from "@/components/AppToaster";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,7 @@ const App = () => (
         </Routes>
       </Suspense>
     </BrowserRouter>
+    <AppToaster />
   </QueryClientProvider>
 );
 
