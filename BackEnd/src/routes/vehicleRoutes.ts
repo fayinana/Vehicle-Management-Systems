@@ -1,4 +1,3 @@
-// src/routes/vehicleRoutes.ts
 import { Router } from "express";
 import * as vehicleController from "./../controllers/vehicleController";
 
@@ -8,7 +7,4 @@ router
   .get(vehicleController.getVehicles)
   .post(vehicleController.addVehicle);
 router.route("/:id").patch(vehicleController.updateVehicleStatus);
-
-// router.get("/id", vehicleController.getVehicle);
-
 export default router;

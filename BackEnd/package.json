@@ -6,7 +6,7 @@
     "start:dev": "cross-env NODE_ENV=development nodemon src/server.ts",
     "build": "cross-env NODE_ENV=production tsc",
     "start:prod": "cross-env NODE_ENV=production node dist/index.js",
-    "test": "jest",
+    "test": "jest --testTimeout 20000",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ."
   },
@@ -32,6 +32,7 @@
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.4",
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
@@ -42,10 +43,14 @@
     "@types/mongoose": "^5.11.97",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.10.2",
+    "@types/supertest": "^6.0.2",
+    "axios": "^1.7.9",
     "cross-env": "^7.0.3",
     "eslint": "^9.16.0",
     "jest": "^29.7.0",
     "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "transformers": "^3.1.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"

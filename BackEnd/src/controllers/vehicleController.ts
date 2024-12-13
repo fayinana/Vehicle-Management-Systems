@@ -55,19 +55,3 @@ export const getVehicles = catchAsync(
     });
   }
 );
-
-export const getVehicle = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  const { id } = req.params;
-  const vehicle = await Vehicle.findById(id);
-  if (!vehicle) {
-    return next(new AppError("Invalid ID: no vehicle found with that ID", 404));
-  }
-  res.status(200).json({
-    status: "success",
-    vehicle,
-  });
-};
