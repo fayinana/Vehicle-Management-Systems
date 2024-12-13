@@ -5,6 +5,10 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "module": "ESNext", // or "ES6"
+    "target": "ESNext", // or "ES6"
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
