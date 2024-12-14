@@ -1,6 +1,6 @@
 # Vehicle Management app Setup
 
-![Logo](path-to-your-logo.png)
+![Logo](https://raw.githubusercontent.com/fayinana/Vehicle-Management-Systems/refs/heads/main/FrontEnd/public/logo.png)
 
 This document provides instructions to set up and run your full-stack application. The project is structured with separate `FrontEnd` and `BackEnd` directories within the root folder.
 
@@ -259,7 +259,7 @@ Ensure the testing tools are configured:
 
 ## Demo
 
-A live demo of the app is available at: [Vehicle Management Demo](demo-link)
+A live demo of the app is available at: [Vehicle Management System](https://vehicle-management-systems.netlify.app)
 
 ## Example Implementation
 

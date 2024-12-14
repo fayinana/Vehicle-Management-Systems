@@ -18,8 +18,6 @@ const StatusBarChart = ({ data }: StatusBarChartProps) => {
   const defaultData = data || [];
   const emptyData = defaultData.length === 0;
 
-  console.log(data);
-
   return (
     <Card className="dark:border-gray-800">
       <CardHeader>

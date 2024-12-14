@@ -7,15 +7,18 @@ import dotenv from "dotenv";
 import vehicleRoutes from "./routes/vehicleRoutes";
 import AppError from "./utils/appError";
 
-dotenv.config({ path: "./.env" });
+dotenv.config({ path: require("path").resolve(__dirname, "./.env") });
 const app = express();
-
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
 
 const corsOptions: cors.CorsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:5071"],
+  origin: [
+    "https://vehicle-management-systems.netlify.app/",
+    "http://localhost:3000",
+    "http://localhost:5071",
+  ],
   credentials: true,
 };
 app.use(cors(corsOptions));
