@@ -1,5 +1,6 @@
 # Vehicle Management app Setup
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/80a15524-a67d-4271-9298-e56f037f7b9b/deploy-status)](https://app.netlify.com/sites/vehicle-management-systems/deploys)
 ![Logo](https://raw.githubusercontent.com/fayinana/Vehicle-Management-Systems/refs/heads/main/FrontEnd/public/logo.png)
 
 This document provides instructions to set up and run your full-stack application. The project is structured with separate `FrontEnd` and `BackEnd` directories within the root folder.
