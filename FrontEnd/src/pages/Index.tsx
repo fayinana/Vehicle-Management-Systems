@@ -177,7 +177,7 @@ const Index = () => {
           <h1 className="text-3xl font-bold tracking-tight">
             Vehicles Dashboard
           </h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             <Select value={String(limit)} onValueChange={handleLimitChange}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Set A Limit" />

@@ -198,6 +198,8 @@ This project is licensed under the [ISC License](LICENSE).
 
 ### Base URL
 
+**Hosted URL** `https://vehicle-management-systems-api.onrender.com`
+
 `http://localhost:<PORT>/api/v1/vehicles`
 
 ### Endpoints

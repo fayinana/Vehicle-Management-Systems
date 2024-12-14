@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <div className="flex items-center space-x-4">
               {/* Desktop Links */}
-              <div className="hidden sm:flex items-center space-x-4">
+              <div className="hidden sm:flex items-center space-x-4 z-50">
                 <Link
                   to="/"
                   className={`flex items-center px-3 py-2 rounded-md text-sm font-medium ${
