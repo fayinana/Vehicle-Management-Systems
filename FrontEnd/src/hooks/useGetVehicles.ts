@@ -1,13 +1,13 @@
 import { getVehicles } from "@/services/apiVehicles";
 import { useQuery } from "@tanstack/react-query";
 
-function useGetVehicles() {
-  const { isLoading, data: vehicles } = useQuery({
-    queryKey: ["vehicles"],
-    queryFn: getVehicles,
+function useGetVehicles({ page, sort, limit, filter }) {
+  const { isLoading, data } = useQuery({
+    queryKey: ["vehicles", page, limit, sort, filter],
+    queryFn: () => getVehicles({ page, sort, limit, filter }),
   });
 
-  return { isLoading, vehicles };
+  return { isLoading, vehicles: data?.vehicles || [], total: data?.total || 0 };
 }
 
 export default useGetVehicles;

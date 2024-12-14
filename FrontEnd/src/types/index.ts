@@ -1,6 +1,6 @@
 export interface Vehicle {
   _id?: string;
   name: string;
-  status: string;
+  status: "Active" | "Inactive" | "Maintenance";
   updatedAt?: string;
 }

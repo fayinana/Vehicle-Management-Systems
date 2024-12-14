@@ -50,18 +50,33 @@ const AddVehicle = () => {
               <div className="mt-2">
                 <label
                   htmlFor="status"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                 >
                   Status
                 </label>
                 <select
                   id="status"
                   {...register("status")}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm appearance-none"
                 >
-                  <option value="Active">Active</option>
-                  <option value="Maintenance">Maintenance</option>
-                  <option value="Inactive">Inactive</option>
+                  <option
+                    value="Active"
+                    className="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Active
+                  </option>
+                  <option
+                    value="Maintenance"
+                    className="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Maintenance
+                  </option>
+                  <option
+                    value="Inactive"
+                    className="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Inactive
+                  </option>
                 </select>
                 {errors.status && (
                   <p className="text-red-600 text-sm">
@@ -69,6 +84,7 @@ const AddVehicle = () => {
                   </p>
                 )}
               </div>
+
               <div className="flex justify-end space-x-4">
                 <Button
                   type="button"

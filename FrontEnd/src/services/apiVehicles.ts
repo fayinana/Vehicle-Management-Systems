@@ -4,10 +4,43 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function getVehicles() {
+// export async function getVehicles({ search, page, sort, limit, filter }) {
+//   try {
+//     let query = "";
+//     if (sort) {
+//       query = `sort=${sort}`;
+//     }
+//     if (limit) {
+//       query = query + `&limit=${limit}`;
+//     }
+//     if (page) {
+//       query = query + `&page=${page}`;
+//     }
+//     if (filter) {
+//       query = query + `&status=${filter}`;
+//     }
+//     if (search) {
+//       query = query + `&search=${search}`;
+//     }
+//     const res = await axios.get(`${API_URL}/vehicles?${query}`);
+
+// }
+
+export async function getVehicles({
+  page,
+  sort,
+  limit,
+  filter,
+}): Promise<{ vehicles: Vehicle[]; total: number }> {
   try {
-    const res = await axios.get(`${API_URL}/vehicles`);
-    return res.data.vehicles;
+    const params = new URLSearchParams();
+    if (sort) params.append("sort", sort);
+    if (limit) params.append("limit", limit);
+    if (page) params.append("page", page);
+    if (filter) params.append("status", filter);
+    const res = await axios.get(`${API_URL}/vehicles?${params.toString()}`);
+
+    return { vehicles: res.data.vehicles, total: res.data.total };
   } catch (error) {
     handleError(error);
   }

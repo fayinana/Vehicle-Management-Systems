@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 
 interface IVehicle extends Document {
   name: string;
-  status: string;
+  status: "Active" | "Maintenance" | "Inactive";
   updatedAt: Date;
 }
 

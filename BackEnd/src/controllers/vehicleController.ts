@@ -1,5 +1,5 @@
 // src/handlers/vehicleHandlers.ts
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, query, Request, Response } from "express";
 import Vehicle from "../models/VehicleModel";
 import catchAsync from "../utils/catchAsync";
 import AppError from "../utils/appError";
@@ -48,10 +48,19 @@ export const getVehicles = catchAsync(
       .limitField()
       .paginate();
     const vehicles = await features.query;
+    let total: number;
+    if (req.query.status) {
+      const totalDoc = await Vehicle.find({ status: req.query.status });
+      total = totalDoc.length;
+    } else {
+      const totalDoc = await Vehicle.find();
+      total = totalDoc.length;
+    }
     res.status(200).json({
       status: "success",
       result: vehicles.length,
       vehicles,
+      total,
     });
   }
 );
