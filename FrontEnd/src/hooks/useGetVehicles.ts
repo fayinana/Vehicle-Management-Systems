@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 function useGetVehicles({ page, sort, limit, filter }) {
   const { isLoading, data } = useQuery({
-    queryKey: ["vehicles", page, limit, sort, filter],
+    queryKey: ["vehicles"],
     queryFn: () => getVehicles({ page, sort, limit, filter }),
   });
 
